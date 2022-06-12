@@ -61,6 +61,8 @@ ForgQi/biliup-rs
   - upload_by_edit：通过编辑稿件的方法上传多P切片，可以让后续分P上传时让前面的分P进入审核队列，加快开放浏览的速度。**请注意打开此功能时，请保持keep_record_after_upload和keep_clippers_after_upload为True。否则，keep_record_after_upload和keep_clippers_after_upload设置项将无效。**
   - thread_pool_workers: 上传时的线程池大小。默认：1
   - max_retry: 最大重试次数。默认：10 -->
+- line：上传线路。默认 AUTO。 详见biliup项目.目前可手动切换为bda2, kodo, ws, qn。
+- threads：上传并发数.默认：3。
 - enable_baiduyun：是否开启百度云功能。
 
 ### 直播间特定设置（spec部分，此部分是一个数组，如果需要同时监控多个直播间，依次添加至数组中即可）
