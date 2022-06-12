@@ -1,7 +1,11 @@
-# DDRecorder
+# DDRecorder 改
  Headless全自动B站直播录播、切片、上传一体工具
  
-**>=1.1.2版本增加了自动检查更新功能，需要连接至Github服务器，敬请留意。**
+ -补上了原版遗漏的依赖
+ -新增了上传线路选择的设置
+ 
+ 
+[**>=1.1.2版本增加了自动检查更新功能，需要连接至Github服务器，敬请留意。**
 
 _使用Bert+WTB语料库（基于fastHan库）进行弹幕分词的工作在asachiri/fasthan-dev分支下进行开发，欢迎大家测试反馈意见。_
 
@@ -10,18 +14,13 @@ FortuneDayssss/BilibiliUploader
 MoyuScript/bilibili-api
 ForgQi/biliup-rs
 
-## 安装指南（Windows）
-1. 在Release下载zip包解压。
-2. 修改配置文件config.json 可以选择使用自带的DDRecorderConfigManager（源码：AsaChiri/DDRecorderConfigManager)
-3. 双击运行DDRecorder.exe （这将使用config.json）或 DDRecorder.exe <配置文件> 
-
 
 ## 安装指南（MacOS/Linux）
 1. 安装Python >= 3.8 https://www.python.org/downloads/release/python-3104/
 2. 安装ffmpeg https://ffmpeg.org/download.html
 3. 执行pip install -r requirements.txt
-4. 修改config文件夹下的配置文件config.json
-5. 执行python main.py <配置文件> 
+4. 根据config文件夹下的例子，新建配置文件config.json
+5. 执行python main.py <path to config.json> 
    
 ## 配置文件字段解释
 
@@ -47,7 +46,7 @@ ForgQi/biliup-rs
 
 如果想要指定描述文本为“主播锐评ylg”，发送```/DDR clip 60 主播锐评ylg```即可。
 
-手动切片的将会输出到与自动切片相同的文件夹，因此受到uploader-clippers中的设置项控制。即如果打开了自动上传切片功能，手动切片同样也会上传，不过分P名将不再是自动采集的弹幕关键词，而是上面所述的描述文本。
+手动切片的将会输出到与自动切片相同的文件夹，因此受到uploader-clippers中的设置项控制。即如果打开了自动上传切片功能，手动切片同样也会上传，不过分P名将不再是自动采集的弹幕关键词，而是上面所述的描述文本。](https://github.com/AsaChiri/DDRecorder)
 
 ### 全局设置（root部分）
 - check_interval: 直播间开播状态检查间隔，单位为秒，每个监控直播间单独计数，因此如果监控直播间较多，建议适当调大。由于B站API访问次数限制，建议不要小于30。默认：100
