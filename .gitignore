@@ -126,8 +126,7 @@ dmypy.json
 
 data/
 log/
-config/*
-!config/config.json
+config/config.json
 
 # vscode
 .vscode/
