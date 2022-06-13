@@ -130,3 +130,4 @@ config/config.json
 
 # vscode
 .vscode/
+.idea/
