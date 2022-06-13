@@ -6,5 +6,5 @@ services:
       - ./config:/usr/src/app/config
       - ./log:/usr/src/app/log
       - ./data:/usr/src/app/data
-      - resolv.conf:/etc/resolv.conf
+      - ./resolv.conf:/etc/resolv.conf
     restart: always
