@@ -66,6 +66,8 @@ class Uploader(BiliLive):
                     'uploader', {}).get('clips', {}).get('tid', 27)
                 clips_video_data.set_tag(self.config.get('spec', {}).get(
                     'uploader', {}).get('clips', {}).get('tags', []))
+                clips_video_data.dynamic = self.config.get('spec', {}).get(
+                    'uploader', {}).get('clips', {}).get('dynamic', "")
                 self.uploader.video = clips_video_data
                 filelists = os.listdir(self.output_dir)
                 for filename in filelists:
@@ -103,6 +105,8 @@ class Uploader(BiliLive):
                     'uploader', {}).get('record', {}).get('tid', 27)
                 record_video_data.set_tag(self.config.get('spec', {}).get(
                     'uploader', {}).get('record', {}).get('tags', []))
+                record_video_data.dynamic = self.config.get('spec', {}).get(
+                    'uploader', {}).get('record', {}).get('dynamic', "")
                 self.uploader.video = record_video_data
 
                 filelists = os.listdir(self.splits_dir)
