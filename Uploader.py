@@ -74,8 +74,9 @@ class Uploader(BiliLive):
                     if os.path.getsize(os.path.join(self.output_dir, filename)) < 1024*1024:
                         continue
                     file_path = os.path.join(self.output_dir, filename)
-                    video_part = self.uploader.upload_file(file_path, self.config.get('root', {}).get('line', "AUTO"),
-                                                           self.config.get('root', {}).get('threads', 3))
+                    video_part = self.uploader.upload_file(file_path,
+                                                           lines=self.config.get('root', {}).get('line', "AUTO"),
+                                                           tasks=self.config.get('root', {}).get('threads', 3))
                     video_part['title'] = os.path.splitext(filename)[
                         0].split("_")[-1]
                     video_part['desc'] = self.config.get('spec', {}).get('uploader', {}).get(
@@ -114,8 +115,9 @@ class Uploader(BiliLive):
                     if os.path.getsize(os.path.join(self.splits_dir, filename)) < 1024*1024:
                         continue
                     file_path = os.path.join(self.splits_dir, filename)
-                    video_part = self.uploader.upload_file(file_path, self.config.get('root', {}).get('line', "AUTO"),
-                                                           self.config.get('root', {}).get('threads', 3))
+                    video_part = self.uploader.upload_file(file_path,
+                                                           lines=self.config.get('root', {}).get('line', "AUTO"),
+                                                           tasks=self.config.get('root', {}).get('threads', 3))
                     video_part['title'] = os.path.splitext(filename)[
                         0].split("_")[-1]
                     video_part['desc'] = self.config.get('spec', {}).get('uploader', {}).get(
