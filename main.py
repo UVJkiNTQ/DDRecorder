@@ -75,7 +75,7 @@ if __name__ == "__main__":
             'spec': spec_config
         }
         tr = MainThreadRunner(config)
-        tr.setDaemon(True)
+        tr.daemon = True
         runner_dict[spec_config['room_id']] = tr
 
     for tr in runner_dict.values():
